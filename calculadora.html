@@ -1,17 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="calculadora.css">
-  
     <title>Calculadora</title>
 </head>
 
 <body>
+    <link rel="stylesheet" href="calculadora.css">
     <div class="content">
-        <h2>Iago Dias</h2>
+        <h2>Seu nome</h2>
         <div class="calculator">
             <h3>Calculator</h3>
             <p id="result"></p>
@@ -47,7 +44,30 @@
             </table>
         </div>
     </div>
-    <script src="./logica.js" ></script>
+    <script  >
+        function insert(num) {
+            var number = document.getElementById('result').innerHTML;
+            document.getElementById('result').innerHTML = number + num;
+          }
+          
+          function clean() {
+            document.getElementById('result').innerHTML = "";
+          }
+          
+          function back() {
+            var result = document.getElementById('result').innerHTML;
+            document.getElementById('result').innerHTML = result.substring(0, result.length - 1);
+          }
+          
+          function calculator() {
+            var result = document.getElementById('result').innerHTML;
+            if (result) {
+                document.getElementById('result').innerHTML = eval(result);
+            } else {
+                document.getElementById('result').innerHTML = "Error";
+            }
+          }
+    </script>
 </body>
 
 </html>
