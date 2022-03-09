@@ -1,22 +1,23 @@
 function insert(num) {
-  var number = document.getElementById('result').innerHTML;
-  document.getElementById('result').innerHTML = number + num;
+  var number = document.getElementById('result').value;
+  console.log(number);
+  document.getElementById('result').value = number + num;
 }
 
 function clean() {
-  document.getElementById('result').innerHTML = "";
+  document.getElementById('result').value = "";
 }
 
 function back() {
-  var result = document.getElementById('result').innerHTML;
-  document.getElementById('result').innerHTML = result.substring(0, result.length - 1);
+  var result = document.getElementById('result').value;
+  document.getElementById('result').value = result.substring(0, result.length - 1);
 }
 
 function calculator() {
-  var result = document.getElementById('result').innerHTML;
+  var result = document.getElementById('result').value;
   if (result) {
-      document.getElementById('result').innerHTML = eval(result);
+      document.getElementById('result').value = eval(result);
   } else {
-      document.getElementById('result').innerHTML = "Error";
+      document.getElementById('result').value = "Error";
   }
 }
